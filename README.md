@@ -1,2 +1,2 @@
 # gardusi.github.io
-Giovanni Gardusi, Software Engineer
+Giovanni Gardusi, Tech Lead & Software Engineer
