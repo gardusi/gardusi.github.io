@@ -285,6 +285,8 @@
       border: 1px solid var(--line-strong); color: var(--ink); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
     }
     .now .led { width: 6px; height: 6px; }
+    .co-head { display: flex; align-items: center; gap: 16px; }
+    .logo { width: 48px; height: 48px; flex: none; display: block; background: #fff; border: 1px solid var(--line-strong); object-fit: cover; }
     .job .co {
       font-family: var(--cond); font-weight: 700; font-size: 28px; line-height: 1.05; text-transform: uppercase; letter-spacing: .01em; margin: 0;
     }
@@ -370,6 +372,8 @@
     .edu-grid > div { padding: 22px 24px; border-right: 1px solid var(--line); }
     .edu-grid > div:last-child { border-right: 0; }
     .edu-grid h3.label { margin: 0 0 16px; color: var(--ink); }
+    .edu-item { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; }
+    .edu-item .logo { width: 44px; height: 44px; grid-row: span 3; margin-top: 14px; }
     .edu-item + .edu-item { margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--line); }
     .edu-item .when { font-family: var(--mono); font-size: 12px; color: var(--accent); font-weight: 500; }
     .edu-item h4 { margin: 4px 0 2px; font-family: var(--cond); font-size: 21px; font-weight: 700; text-transform: uppercase; line-height: 1.1; }
@@ -559,8 +563,13 @@
             <span class="now"><i class="led"></i>Current</span>
           </div>
           <div class="body">
-            <h3 class="co">NG.CASH</h3>
-            <div class="role">Engineering Manager</div>
+            <div class="co-head">
+              <img class="logo" src="assets/logos/ngcash.png" alt="" width="48" height="48" loading="lazy">
+              <div>
+                <h3 class="co">NG.CASH</h3>
+                <div class="role">Engineering Manager</div>
+              </div>
+            </div>
             <p class="summary">Latin America's leading financial platform for Gen Z: 7M+ accounts opened, regulated by the Central Bank of Brazil and backed by a16z and NEA.</p>
             <ul>
               <li>Tech Lead of the Credit Squad, building new solutions for the company's own credit ecosystem, including a payroll-loan workflow designed on AWS Step Functions.</li>
@@ -580,8 +589,13 @@
             <div class="where">Berlin, Germany</div>
           </div>
           <div class="body">
-            <h3 class="co">Klarna</h3>
-            <div class="role">Senior Software Engineer</div>
+            <div class="co-head">
+              <img class="logo" src="assets/logos/klarna.png" alt="" width="48" height="48" loading="lazy">
+              <div>
+                <h3 class="co">Klarna</h3>
+                <div class="role">Senior Software Engineer</div>
+              </div>
+            </div>
             <p class="summary">Full-stack, backend-focused development of Klarna Deals and Rewards.</p>
             <ul>
               <li>Lead engineer on deals for new users, delivered across North America, Europe and Oceania.</li>
@@ -602,8 +616,13 @@
             <div class="where">São Paulo, Brazil</div>
           </div>
           <div class="body">
-            <h3 class="co">Mercado Livre</h3>
-            <div class="role">Senior Software Engineer <span>/ Software Engineer until Jul 2021</span></div>
+            <div class="co-head">
+              <img class="logo" src="assets/logos/mercadolivre.png" alt="" width="48" height="48" loading="lazy">
+              <div>
+                <h3 class="co">Mercado Livre</h3>
+                <div class="role">Senior Software Engineer <span>/ Software Engineer until Jul 2021</span></div>
+              </div>
+            </div>
             <p class="summary">Backend development at Mercado Pago, the fintech arm of Mercado Livre.</p>
             <ul>
               <li>Built a checkout solution serving nine Latin American countries.</li>
@@ -622,8 +641,13 @@
             <div class="where">São Paulo, Brazil</div>
           </div>
           <div class="body">
-            <h3 class="co">Vizir Software Studio</h3>
-            <div class="role">Systems Analyst <span>/ Banqi</span></div>
+            <div class="co-head">
+              <img class="logo" src="assets/logos/vizir.png" alt="" width="48" height="48" loading="lazy">
+              <div>
+                <h3 class="co">Vizir Software Studio</h3>
+                <div class="role">Systems Analyst <span>/ Banqi</span></div>
+              </div>
+            </div>
             <p class="summary">Backend development of Banqi, Via Varejo's digital wallet.</p>
             <ul>
               <li>Key role in developing and maintaining the platform architecture.</li>
@@ -642,8 +666,13 @@
             <div class="where">São Paulo, Brazil</div>
           </div>
           <div class="body">
-            <h3 class="co">Outsmart AppSimples</h3>
-            <div class="role">Mobile Developer</div>
+            <div class="co-head">
+              <img class="logo" src="assets/logos/outsmart.png" alt="" width="48" height="48" loading="lazy">
+              <div>
+                <h3 class="co">Outsmart AppSimples</h3>
+                <div class="role">Mobile Developer</div>
+              </div>
+            </div>
             <p class="summary">Android, iOS, web and backend development.</p>
             <ul>
               <li>Owned small-to-medium complexity projects end to end.</li>
@@ -661,8 +690,13 @@
             <div class="where">University of São Paulo</div>
           </div>
           <div class="body">
-            <h3 class="co">Agriculture Automation Lab</h3>
-            <div class="role">Research Scholarship <span>/ USP · PCS</span></div>
+            <div class="co-head">
+              <img class="logo" src="assets/logos/usp.png" alt="" width="48" height="48" loading="lazy">
+              <div>
+                <h3 class="co">Agriculture Automation Lab</h3>
+                <div class="role">Research Scholarship <span>/ USP · PCS</span></div>
+              </div>
+            </div>
             <p class="summary">Computer and Systems Department, Polytechnic School.</p>
             <ul>
               <li>Wine supply-chain traceability project under Prof. Leonardo Campos.</li>
@@ -758,11 +792,13 @@
         <div>
           <h3 class="label">Formal education</h3>
           <div class="edu-item">
+            <img class="logo" src="assets/logos/usp.png" alt="" width="44" height="44" loading="lazy">
             <div class="when">2014 — 2018</div>
             <h4>Polytechnic School · University of São Paulo</h4>
             <p>Degree in Computer Engineering. Member of a mobile development study group.</p>
           </div>
           <div class="edu-item">
+            <img class="logo" src="assets/logos/liceu.png" alt="" width="44" height="44" loading="lazy">
             <div class="when">2011 — 2013</div>
             <h4>Liceu de Artes e Ofícios de São Paulo</h4>
             <p>Technical education in Electronics.</p>
