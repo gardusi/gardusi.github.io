@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giovanni Gardusi — Engineering Manager</title>
+  <meta name="description" content="Giovanni Gardusi — Engineering Manager and software engineer with a decade building fintech products at NG.CASH, Klarna, Mercado Pago and Banqi.">
+  <meta name="author" content="Giovanni Gardusi">
+  <link rel="canonical" href="https://gardusi.github.io/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Giovanni Gardusi — Engineering Manager">
+  <meta property="og:description" content="A decade building payments, credit and banking products across Latin America and Europe.">
+  <meta property="og:url" content="https://gardusi.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/25674800?v=4">
+  <meta name="twitter:card" content="summary">
+
+  <meta name="theme-color" content="#e6e5e1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121314" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23121314'/%3E%3Crect x='0' y='54' width='64' height='10' fill='%230b6e99'/%3E%3Ctext x='50%25' y='44%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='28' fill='%23e6e5e1'%3EGG%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+
+  <style>
+    :root {
+      --bg: #e6e5e1;
+      --panel: #efeeea;
+      --ink: #121314;
+      --ink-2: #3d3f42;
+      --ink-3: #74767a;
+      --line: #c4c3be;
+      --line-strong: #121314;
+      --grid: rgba(18,19,20,.05);
+      --accent: #0b6e99;
+      --accent-ink: #ffffff;
+      --cond: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+      --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --maxw: 1200px;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #121314;
+        --panel: #18191b;
+        --ink: #e6e5e1;
+        --ink-2: #b3b2ad;
+        --ink-3: #7d7d79;
+        --line: #2c2e31;
+        --line-strong: #e6e5e1;
+        --grid: rgba(230,229,225,.035);
+        --accent: #3fb6dc;
+        --accent-ink: #121314;
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #121314;
+      --panel: #18191b;
+      --ink: #e6e5e1;
+      --ink-2: #b3b2ad;
+      --ink-3: #7d7d79;
+      --line: #2c2e31;
+      --line-strong: #e6e5e1;
+      --grid: rgba(230,229,225,.035);
+      --accent: #3fb6dc;
+      --accent-ink: #121314;
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 32px 32px;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    @media (max-width: 560px) { .wrap { padding: 0 16px; } }
+
+    .mono { font-family: var(--mono); }
+    .label {
+      font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+    }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      background: var(--ink); color: var(--bg);
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .topbar .wrap { display: flex; justify-content: space-between; gap: 16px; height: 32px; align-items: center; }
+    .topbar .status { display: inline-flex; align-items: center; gap: 8px; }
+    .led { width: 7px; height: 7px; background: #3ddc84; box-shadow: 0 0 8px #3ddc84; animation: blink 2.4s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+    @media (max-width: 560px) { .topbar .hide-sm { display: none; } }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .nav-inner { display: flex; align-items: stretch; justify-content: space-between; height: 56px; }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-family: var(--cond); font-weight: 700; font-size: 18px; letter-spacing: .02em; text-transform: uppercase;
+    }
+    .brand .sq { width: 14px; height: 14px; background: var(--accent); }
+    .nav-links { display: flex; align-items: stretch; }
+    .nav-links a {
+      display: flex; align-items: center; padding: 0 18px;
+      border-left: 1px solid var(--line);
+      font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2);
+      transition: background .15s, color .15s;
+    }
+    .nav-links a:hover { background: var(--ink); color: var(--bg); }
+    .theme-btn {
+      width: 56px; border: 0; border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+      background: transparent; color: var(--ink-2); display: grid; place-items: center; cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+    .theme-btn:hover { background: var(--accent); color: var(--accent-ink); }
+    .theme-btn svg { width: 16px; height: 16px; }
+    .icon-sun { display: none; }
+    :root[data-theme="dark"] .icon-sun { display: block; }
+    :root[data-theme="dark"] .icon-moon { display: none; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .icon-sun { display: block; }
+      :root:not([data-theme="light"]) .icon-moon { display: none; }
+    }
+    @media (max-width: 820px) { .nav-links .hide-sm { display: none; } .nav-links a { padding: 0 12px; } }
+    @media (max-width: 420px) { .brand span.full { display: none; } }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 72px 0 0; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 340px;
+      border: 1px solid var(--line-strong); background: var(--panel);
+    }
+    .hero-main { padding: 48px 48px 44px; border-right: 1px solid var(--line-strong); }
+    .hero-main .label { display: flex; gap: 18px; flex-wrap: wrap; }
+    .hero-main .label b { color: var(--accent); font-weight: 600; }
+    h1 {
+      font-family: var(--cond); font-weight: 700; text-transform: uppercase;
+      font-size: clamp(48px, 8.2vw, 112px); line-height: .88; letter-spacing: -.02em;
+      margin: 28px 0 28px;
+    }
+    h1 .hl { color: var(--accent); }
+    .lede { font-size: clamp(16px, 1.8vw, 19px); color: var(--ink-2); max-width: 620px; margin: 0 0 36px; }
+    .lede strong { color: var(--ink); font-weight: 600; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      height: 48px; padding: 0 20px; margin: 0 -1px -1px 0;
+      font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+      border: 1px solid var(--line-strong); background: transparent; color: var(--ink);
+      transition: background .15s, color .15s;
+    }
+    .btn:hover { background: var(--ink); color: var(--bg); }
+    .btn svg { width: 16px; height: 16px; flex: none; }
+    .btn.primary { background: var(--accent); color: var(--accent-ink); }
+    .btn.primary:hover { background: var(--ink); color: var(--bg); }
+
+    .hero-side { display: grid; grid-template-rows: auto 1fr; }
+    .portrait { position: relative; aspect-ratio: 1; border-bottom: 1px solid var(--line-strong); overflow: hidden; background: var(--ink); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .portrait .tagline {
+      position: absolute; left: 0; bottom: 0; background: var(--accent); color: var(--accent-ink);
+      font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 6px 10px;
+    }
+    .crop { position: absolute; width: 18px; height: 18px; border-color: var(--accent); border-style: solid; }
+    .crop.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+    .crop.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+    .crop.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+    .specs { margin: 0; padding: 0; list-style: none; font-family: var(--mono); font-size: 12.5px; }
+    .specs li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 18px; border-bottom: 1px solid var(--line); }
+    .specs li:last-child { border-bottom: 0; }
+    .specs dt, .specs .k { color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
+    .specs .v { color: var(--ink); text-align: right; }
+
+    @media (max-width: 900px) {
+      .hero { padding-top: 32px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-main { border-right: 0; border-bottom: 1px solid var(--line-strong); padding: 32px 22px; }
+      .hero-side { grid-template-columns: 180px 1fr; grid-template-rows: none; }
+      .portrait { border-bottom: 0; border-right: 1px solid var(--line-strong); }
+      .portrait .tagline { display: none; }
+    }
+    @media (max-width: 520px) {
+      .hero-side { grid-template-columns: 1fr; }
+      .portrait { border-right: 0; border-bottom: 1px solid var(--line-strong); max-height: 320px; aspect-ratio: auto; }
+      .cta .btn { flex: 1 1 auto; justify-content: center; }
+    }
+
+    /* ---------- Stats ---------- */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line-strong); border-top: 0; background: var(--panel);
+    }
+    .stat { padding: 24px; border-left: 1px solid var(--line); position: relative; }
+    .stat:first-child { border-left: 0; }
+    .stat .num { font-family: var(--cond); font-weight: 700; font-size: 56px; line-height: 1; letter-spacing: -.02em; }
+    .stat .num small { font-size: .42em; margin-left: 4px; color: var(--accent); letter-spacing: 0; }
+    .stat .lbl { margin-top: 10px; font-size: 13.5px; color: var(--ink-2); line-height: 1.4; }
+    .stat .idx { position: absolute; top: 12px; right: 14px; font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); }
+    @media (max-width: 760px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 20px 16px; }
+      .stat:nth-child(odd) { border-left: 0; }
+      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .stat .num { font-size: 44px; }
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 104px 0 0; scroll-margin-top: 56px; }
+    .sec-head {
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+      border-bottom: 4px solid var(--line-strong); padding-bottom: 14px; margin-bottom: 40px;
+    }
+    .sec-head .idx { font-family: var(--mono); font-size: 13px; color: var(--accent); font-weight: 600; letter-spacing: .06em; }
+    h2 {
+      font-family: var(--cond); font-weight: 700; text-transform: uppercase;
+      font-size: clamp(36px, 5.4vw, 64px); line-height: .92; letter-spacing: -.01em; margin: 8px 0 0;
+    }
+    .sec-head .label { text-align: right; padding-bottom: 6px; }
+    @media (max-width: 760px) {
+      section { padding-top: 72px; }
+      .sec-head { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 28px; }
+      .sec-head .label { text-align: left; padding-bottom: 0; }
+    }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+    .about-text p { font-size: 18px; color: var(--ink-2); margin: 0 0 18px; }
+    .about-text p:first-child { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; color: var(--ink); font-weight: 500; letter-spacing: -.01em; }
+    .pillars { border: 1px solid var(--line-strong); background: var(--panel); }
+    .pillar { display: grid; grid-template-columns: 52px 1fr; border-bottom: 1px solid var(--line); }
+    .pillar:last-child { border-bottom: 0; }
+    .pillar .n {
+      display: grid; place-items: center; border-right: 1px solid var(--line);
+      font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--accent);
+    }
+    .pillar div:last-child { padding: 18px 20px; }
+    .pillar h3 { margin: 0 0 4px; font-family: var(--cond); font-size: 19px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
+    .pillar p { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+    @media (max-width: 900px) { .about { grid-template-columns: 1fr; gap: 32px; } }
+
+    /* Experience */
+    .jobs { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line-strong); background: var(--panel); }
+    .job { display: grid; grid-template-columns: 64px 260px 1fr; border-bottom: 1px solid var(--line); }
+    .job:last-child { border-bottom: 0; }
+    .job > * { padding: 28px 24px; }
+    .job .n {
+      border-right: 1px solid var(--line); padding: 28px 0; text-align: center;
+      font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--ink-3);
+    }
+    .job.current .n { background: var(--accent); color: var(--accent-ink); }
+    .job-meta { border-right: 1px solid var(--line); font-family: var(--mono); font-size: 12.5px; color: var(--ink-3); }
+    .job-meta .when { color: var(--ink); font-weight: 500; letter-spacing: .02em; }
+    .job-meta .where { margin-top: 6px; text-transform: uppercase; letter-spacing: .06em; font-size: 11.5px; }
+    .now {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 3px 8px;
+      border: 1px solid var(--line-strong); color: var(--ink); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .now .led { width: 6px; height: 6px; }
+    .job .co {
+      font-family: var(--cond); font-weight: 700; font-size: 28px; line-height: 1.05; text-transform: uppercase; letter-spacing: .01em; margin: 0;
+    }
+    .job .role { margin-top: 4px; font-family: var(--mono); font-size: 13px; color: var(--accent); font-weight: 500; }
+    .job .role span { color: var(--ink-3); font-weight: 400; }
+    .job .summary { margin: 14px 0 14px; color: var(--ink); }
+    .job ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+    .job li { position: relative; padding-left: 22px; color: var(--ink-2); font-size: 15px; }
+    .job li::before { content: "▪"; position: absolute; left: 2px; top: 0; color: var(--accent); font-size: 13px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+    .tag {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 8px; background: var(--bg); border: 1px solid var(--line); color: var(--ink-2);
+    }
+    @media (max-width: 900px) {
+      .job { grid-template-columns: 48px 1fr; }
+      .job-meta { border-right: 0; border-bottom: 1px dashed var(--line); padding-bottom: 14px; }
+      .job .body { grid-column: 2; padding-top: 16px; }
+      .job .n { grid-row: span 2; }
+      .job > * { padding: 22px 18px; }
+      .job .co { font-size: 24px; }
+    }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line-strong); background: var(--panel); }
+    .skill { padding: 22px 24px 26px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .skill:nth-child(3n) { border-right: 0; }
+    .skill:nth-last-child(-n+3) { border-bottom: 0; }
+    .skill h3 { margin: 0 0 16px; display: flex; justify-content: space-between; }
+    .skill h3 .label { color: var(--ink); }
+    .skill h3 .idx { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { font-size: 14px; padding: 4px 10px; border: 1px solid var(--line); background: var(--bg); }
+    @media (max-width: 900px) {
+      .skills { grid-template-columns: 1fr 1fr; }
+      .skill:nth-child(3n) { border-right: 1px solid var(--line); }
+      .skill:nth-child(2n) { border-right: 0; }
+      .skill:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .skill:nth-last-child(-n+2) { border-bottom: 0; }
+    }
+    @media (max-width: 600px) {
+      .skills { grid-template-columns: 1fr; }
+      .skill, .skill:nth-child(3n) { border-right: 0; border-bottom: 1px solid var(--line); }
+      .skill:last-child { border-bottom: 0; }
+    }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line-strong); background: var(--panel); }
+    .proj {
+      display: flex; flex-direction: column; gap: 10px; padding: 22px 24px; min-height: 190px;
+      border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      transition: background .15s, color .15s;
+    }
+    .proj:nth-child(3n) { border-right: 0; }
+    .proj:nth-last-child(-n+3) { border-bottom: 0; }
+    .proj:hover { background: var(--ink); color: var(--bg); }
+    .proj:hover p, .proj:hover .proj-foot { color: color-mix(in srgb, var(--bg) 70%, transparent); }
+    .proj-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .proj h3 { margin: 0; font-family: var(--mono); font-size: 14.5px; font-weight: 600; }
+    .proj .arrow { font-family: var(--mono); color: var(--accent); transition: transform .15s; }
+    .proj:hover .arrow { transform: translate(3px, -3px); }
+    .proj p { margin: 0; font-size: 14.5px; color: var(--ink-2); flex: 1; }
+    .proj-foot { display: flex; align-items: center; gap: 16px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
+    .lang-dot { display: inline-block; width: 8px; height: 8px; margin-right: 6px; }
+    .more { margin-top: 18px; font-family: var(--mono); font-size: 13px; color: var(--ink-2); }
+    .more a { color: var(--accent); }
+    .more a:hover { text-decoration: underline; }
+    @media (max-width: 900px) {
+      .projects { grid-template-columns: 1fr 1fr; }
+      .proj:nth-child(3n) { border-right: 1px solid var(--line); }
+      .proj:nth-child(2n) { border-right: 0; }
+      .proj:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .proj:nth-last-child(-n+2) { border-bottom: 0; }
+    }
+    @media (max-width: 600px) {
+      .projects { grid-template-columns: 1fr; }
+      .proj, .proj:nth-child(3n) { border-right: 0; border-bottom: 1px solid var(--line); min-height: 0; }
+      .proj:last-child { border-bottom: 0; }
+    }
+
+    /* Education */
+    .edu-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; border: 1px solid var(--line-strong); background: var(--panel); }
+    .edu-grid > div { padding: 22px 24px; border-right: 1px solid var(--line); }
+    .edu-grid > div:last-child { border-right: 0; }
+    .edu-grid h3.label { margin: 0 0 16px; color: var(--ink); }
+    .edu-item + .edu-item { margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--line); }
+    .edu-item .when { font-family: var(--mono); font-size: 12px; color: var(--accent); font-weight: 500; }
+    .edu-item h4 { margin: 4px 0 2px; font-family: var(--cond); font-size: 21px; font-weight: 700; text-transform: uppercase; line-height: 1.1; }
+    .edu-item p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .lang-row { padding: 6px 0 10px; }
+    .lang-row .top { display: flex; justify-content: space-between; font-size: 14.5px; }
+    .lang-row small { font-family: var(--mono); font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
+    .meter { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; margin-top: 7px; }
+    .meter i { height: 8px; background: var(--line); }
+    .meter i.on { background: var(--accent); }
+    .courses { margin: 0; padding: 0; list-style: none; }
+    .courses li { padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 14.5px; display: flex; gap: 10px; }
+    .courses li:first-child { padding-top: 0; }
+    .courses li:last-child { border-bottom: 0; }
+    .courses li::before { content: "→"; font-family: var(--mono); color: var(--accent); }
+    .courses small { display: block; font-family: var(--mono); font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; }
+    @media (max-width: 900px) {
+      .edu-grid { grid-template-columns: 1fr 1fr; }
+      .edu-grid > div:first-child { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); }
+    }
+    @media (max-width: 600px) {
+      .edu-grid { grid-template-columns: 1fr; }
+      .edu-grid > div { border-right: 0; border-bottom: 1px solid var(--line); }
+      .edu-grid > div:last-child { border-bottom: 0; }
+    }
+
+    /* Contact */
+    .contact { padding: 104px 0 72px; }
+    .contact-box { background: var(--ink); color: var(--bg); position: relative; }
+    .hazard {
+      height: 14px;
+      background: repeating-linear-gradient(-45deg, var(--accent) 0 14px, var(--ink) 14px 28px);
+      border-bottom: 1px solid var(--ink);
+    }
+    .contact-inner { padding: 56px 48px 48px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+    .contact-box .idx { font-family: var(--mono); font-size: 13px; color: color-mix(in srgb, var(--accent) 60%, var(--bg)); font-weight: 600; letter-spacing: .06em; }
+    .contact-box h2 { margin: 12px 0 16px; font-size: clamp(40px, 6.4vw, 84px); }
+    .contact-box p { margin: 0; color: color-mix(in srgb, var(--bg) 70%, transparent); max-width: 520px; font-size: 17px; }
+    .contact-links { display: flex; flex-direction: column; min-width: 300px; }
+    .contact-box .btn { color: var(--bg); border-color: color-mix(in srgb, var(--bg) 35%, transparent); justify-content: space-between; }
+    .contact-box .btn:hover { background: var(--bg); color: var(--ink); }
+    .contact-box .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .contact-box .btn.primary:hover { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+    .contact-box .btn .left { display: inline-flex; align-items: center; gap: 10px; }
+    @media (max-width: 900px) {
+      .contact-inner { grid-template-columns: 1fr; padding: 40px 22px 32px; }
+      .contact-links { min-width: 0; }
+      .contact-box .btn { text-transform: none; letter-spacing: .02em; }
+    }
+
+    footer { padding: 0 0 40px; }
+    .foot {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      border-top: 1px solid var(--line-strong); padding-top: 16px;
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .no-js .reveal { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .led { animation: none; }
+    }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body class="no-js">
+
+  <div class="topbar">
+    <div class="wrap">
+      <span class="status"><i class="led"></i>Engineering Manager @ NG.CASH</span>
+      <span class="hide-sm">São Paulo, BR · UTC−3</span>
+    </div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" aria-label="Giovanni Gardusi — home"><i class="sq"></i><span class="full">Giovanni Gardusi</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about" class="hide-sm">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills" class="hide-sm">Skills</a>
+        <a href="#projects" class="hide-sm">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <div class="wrap hero">
+      <div class="hero-grid reveal">
+        <div class="hero-main">
+          <div class="label"><span><b>■</b> Engineering leader</span><span>Software engineer</span><span>Fintech</span></div>
+          <h1>Building<br>fintech that<br><span class="hl">lasts_</span></h1>
+          <p class="lede">
+            I'm Giovanni. For a decade I've built <strong>payments, credit and banking</strong> products at
+            NG.CASH, Klarna, Mercado Pago and Banqi, serving users across Latin America, Europe, North America and Oceania.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="https://www.linkedin.com/in/gardusi" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <a class="btn" href="https://github.com/gardusi" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              GitHub
+            </a>
+            <a class="btn" href="mailto:giovanni.gardusi@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="4" width="20" height="16"/><path d="m22 7-10 6L2 7"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="portrait">
+            <img src="https://avatars.githubusercontent.com/u/25674800?v=4" alt="Portrait of Giovanni Gardusi" width="340" height="340">
+            <i class="crop tl"></i><i class="crop tr"></i><i class="crop br"></i>
+            <span class="tagline">Credit products · NG.CASH</span>
+          </div>
+          <ul class="specs">
+            <li><span class="k">Role</span><span class="v">Eng. Manager</span></li>
+            <li><span class="k">Base</span><span class="v">São Paulo, BR</span></li>
+            <li><span class="k">Degree</span><span class="v">Comp. Eng. · USP</span></li>
+            <li><span class="k">Langs</span><span class="v">PT · EN · ES · DE</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats reveal">
+        <div class="stat"><span class="idx">A</span><div class="num">10<small>YRS</small></div><div class="lbl">Shipping software, since 2017</div></div>
+        <div class="stat"><span class="idx">B</span><div class="num">04</div><div class="lbl">Fintechs, from digital wallets to BNPL</div></div>
+        <div class="stat"><span class="idx">C</span><div class="num">09</div><div class="lbl">LatAm countries served by one checkout</div></div>
+        <div class="stat"><span class="idx">D</span><div class="num">03</div><div class="lbl">Squads led: credit, banking &amp; retention</div></div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="idx">[01]</div><h2>About</h2></div>
+        <div class="label">Profile / Principles</div>
+      </div>
+      <div class="about">
+        <div class="about-text reveal">
+          <p>I'm deeply interested in software engineering, systems architecture and data structures — computer science in general.</p>
+          <p>
+            I enjoy working on challenging problems, the kind that sharpen my skills, and I believe in the deliberate decisions
+            through which a long-standing, impactful system gets built. Today I lead engineers at NG.CASH, a digital wallet bringing
+            Gen Z into the banking system, where I grow people, design systems and keep production healthy.
+          </p>
+          <p>
+            I studied Computer Engineering at the Polytechnic School of the University of São Paulo and have worked with teams from
+            Germany, the United States, Argentina and Colombia.
+          </p>
+        </div>
+        <div class="pillars reveal">
+          <div class="pillar"><div class="n">01</div><div><h3>People &amp; teams</h3><p>Career growth for engineers of all seniorities, hiring and technical interviews.</p></div></div>
+          <div class="pillar"><div class="n">02</div><div><h3>Systems design</h3><p>Payment rails, credit workflows and reconciliation built to be correct and observable.</p></div></div>
+          <div class="pillar"><div class="n">03</div><div><h3>Reliability</h3><p>Monitoring guidelines and on-call structures that keep money moving safely.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="idx">[02]</div><h2>Experience</h2></div>
+        <div class="label">2014 → Present</div>
+      </div>
+
+      <ol class="jobs reveal">
+        <li class="job current">
+          <div class="n">06</div>
+          <div class="job-meta">
+            <div class="when">2024.09 — NOW</div>
+            <div class="where">São Paulo, Brazil</div>
+            <span class="now"><i class="led"></i>Current</span>
+          </div>
+          <div class="body">
+            <h3 class="co">NG.CASH</h3>
+            <div class="role">Engineering Manager <span>/ previously Tech Lead</span></div>
+            <p class="summary">A digital wallet focused on bringing Gen Z into the banking system.</p>
+            <ul>
+              <li>Led the Credit Squad in growing the company's own credit ecosystem, including a payroll-loan workflow designed on AWS Step Functions.</li>
+              <li>Led the Banking Squad in maintaining Pix payments and statement transactions, and in integrating the app with insurance solutions.</li>
+              <li>Led the Retention Squad in building an account-yields payment system.</li>
+              <li>Introduced engineering guidelines on monitoring and built the company's on-call structure.</li>
+              <li>Manage the careers of engineers across seniorities and run technical interviews.</li>
+            </ul>
+            <div class="tags"><span class="tag">AWS Step Functions</span><span class="tag">Pix</span><span class="tag">Credit</span><span class="tag">Insurance</span></div>
+          </div>
+        </li>
+
+        <li class="job">
+          <div class="n">05</div>
+          <div class="job-meta">
+            <div class="when">2022.03 — 2024.09</div>
+            <div class="where">Berlin, Germany</div>
+          </div>
+          <div class="body">
+            <h3 class="co">Klarna</h3>
+            <div class="role">Senior Software Engineer</div>
+            <p class="summary">Full-stack development at a global fintech leading purchase experiences.</p>
+            <ul>
+              <li>Delivered and maintained deals for users in North America, Europe and Oceania.</li>
+              <li>Led post-purchase discount reconciliation with upstream services.</li>
+              <li>Drove changes with an ad integrator to improve performance.</li>
+              <li>Streamlined a CRM so marketers could create their own deals.</li>
+              <li>Worked with a multicultural team in Berlin.</li>
+            </ul>
+            <div class="tags"><span class="tag">Full-stack</span><span class="tag">Reconciliation</span><span class="tag">CRM</span></div>
+          </div>
+        </li>
+
+        <li class="job">
+          <div class="n">04</div>
+          <div class="job-meta">
+            <div class="when">2020.12 — 2022.03</div>
+            <div class="where">São Paulo, Brazil</div>
+          </div>
+          <div class="body">
+            <h3 class="co">Mercado Livre</h3>
+            <div class="role">Senior Software Engineer <span>/ Mercado Pago</span></div>
+            <p class="summary">Backend development at Mercado Pago, the fintech arm of Mercado Livre.</p>
+            <ul>
+              <li>Built a checkout solution serving nine Latin American countries.</li>
+              <li>Championed credit lines as a lever for higher conversion, integrating pre-approved credit into checkout.</li>
+              <li>Ran A/B tests on login and credit-line usage.</li>
+              <li>Collaborated with teams in Argentina and Colombia.</li>
+            </ul>
+            <div class="tags"><span class="tag">Checkout</span><span class="tag">Credit lines</span><span class="tag">A/B testing</span></div>
+          </div>
+        </li>
+
+        <li class="job">
+          <div class="n">03</div>
+          <div class="job-meta">
+            <div class="when">2019.03 — 2020.12</div>
+            <div class="where">São Paulo, Brazil</div>
+          </div>
+          <div class="body">
+            <h3 class="co">Vizir Software Studio</h3>
+            <div class="role">Systems Analyst <span>/ Banqi</span></div>
+            <p class="summary">Backend development of Banqi, Via Varejo's digital wallet.</p>
+            <ul>
+              <li>Key role in developing and maintaining the platform architecture.</li>
+              <li>Lead reviewer for the financial and retail teams; member of the project leadership group.</li>
+              <li>Code owner of boleto reconciliation, QR Code payments and Pix transfers.</li>
+              <li>Spent a month in Boston, MA, onboarding new team members from the United States.</li>
+            </ul>
+            <div class="tags"><span class="tag">Pix</span><span class="tag">QR Code payments</span><span class="tag">Boleto</span></div>
+          </div>
+        </li>
+
+        <li class="job">
+          <div class="n">02</div>
+          <div class="job-meta">
+            <div class="when">2017.01 — 2019.03</div>
+            <div class="where">São Paulo, Brazil</div>
+          </div>
+          <div class="body">
+            <h3 class="co">Outsmart AppSimples</h3>
+            <div class="role">Mobile Developer</div>
+            <p class="summary">Android, iOS, web and backend development.</p>
+            <ul>
+              <li>Owned small-to-medium complexity projects end to end.</li>
+              <li>Developed sections of QuintoAndar's rental iOS app.</li>
+              <li>Led weekly iOS chapter meetings, following the Spotify model.</li>
+            </ul>
+            <div class="tags"><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Web</span></div>
+          </div>
+        </li>
+
+        <li class="job">
+          <div class="n">01</div>
+          <div class="job-meta">
+            <div class="when">2014.11 — 2016.02</div>
+            <div class="where">University of São Paulo</div>
+          </div>
+          <div class="body">
+            <h3 class="co">Agriculture Automation Lab</h3>
+            <div class="role">Research Scholarship <span>/ USP · PCS</span></div>
+            <p class="summary">Computer and Systems Department, Polytechnic School.</p>
+            <ul>
+              <li>Wine supply-chain traceability project under Prof. Leonardo Campos.</li>
+              <li>Relational data modelling, Java Swing UI and SSH connectivity.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="idx">[03]</div><h2>Skills</h2></div>
+        <div class="label">Stack / Domain / Leadership</div>
+      </div>
+      <div class="skills reveal">
+        <div class="skill">
+          <h3><span class="label">Backend</span><span class="idx">S.01</span></h3>
+          <div class="chips"><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">NestJS</span><span class="chip">Fastify</span><span class="chip">Express</span><span class="chip">Java</span><span class="chip">Spark</span></div>
+        </div>
+        <div class="skill">
+          <h3><span class="label">Cloud &amp; infra</span><span class="idx">S.02</span></h3>
+          <div class="chips"><span class="chip">AWS</span><span class="chip">AWS CDK</span><span class="chip">Step Functions</span><span class="chip">Infrastructure as Code</span><span class="chip">Monitoring &amp; on-call</span></div>
+        </div>
+        <div class="skill">
+          <h3><span class="label">Data</span><span class="idx">S.03</span></h3>
+          <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">DynamoDB</span><span class="chip">MongoDB</span><span class="chip">Firebase</span></div>
+        </div>
+        <div class="skill">
+          <h3><span class="label">Web &amp; mobile</span><span class="idx">S.04</span></h3>
+          <div class="chips"><span class="chip">React</span><span class="chip">React Native</span><span class="chip">Swift</span><span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">HTML &amp; CSS</span></div>
+        </div>
+        <div class="skill">
+          <h3><span class="label">Domain</span><span class="idx">S.05</span></h3>
+          <div class="chips"><span class="chip">Payments</span><span class="chip">Pix</span><span class="chip">Credit &amp; lending</span><span class="chip">Checkout</span><span class="chip">Reconciliation</span><span class="chip">BNPL</span></div>
+        </div>
+        <div class="skill">
+          <h3><span class="label">Leadership</span><span class="idx">S.06</span></h3>
+          <div class="chips"><span class="chip">Engineering management</span><span class="chip">Career development</span><span class="chip">Hiring</span><span class="chip">Systems design</span><span class="chip">Code review</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="idx">[04]</div><h2>Open source</h2></div>
+        <div class="label">github.com/gardusi</div>
+      </div>
+      <div class="projects reveal">
+        <a class="proj" href="https://github.com/gardusi/type-safe-monads" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>type-safe-monads</h3><span class="arrow">↗</span></div>
+          <p>Safely read Monapt's Options, Tries and Futures through TypeScript type guards.</p>
+          <div class="proj-foot"><span><i class="lang-dot" style="background:#3178c6"></i>TypeScript</span><span>★ 4</span></div>
+        </a>
+        <a class="proj" href="https://github.com/gardusi/spotify-deduplicate" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>spotify-deduplicate</h3><span class="arrow">↗</span></div>
+          <p>Reads a user's saved songs and flags likely duplicates.</p>
+          <div class="proj-foot"><span><i class="lang-dot" style="background:#f1e05a"></i>JavaScript</span></div>
+        </a>
+        <a class="proj" href="https://github.com/gardusi/ledger" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>ledger</h3><span class="arrow">↗</span></div>
+          <p>Sketches of a double-entry ledger, the backbone of every money-moving system.</p>
+          <div class="proj-foot"><span><i class="lang-dot" style="background:#e34c26"></i>HTML</span></div>
+        </a>
+        <a class="proj" href="https://github.com/gardusi/multithreaded-javascript" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>multithreaded-javascript</h3><span class="arrow">↗</span></div>
+          <p>Study repo exploring concurrency and multithreading in JavaScript.</p>
+          <div class="proj-foot"><span><i class="lang-dot" style="background:#f1e05a"></i>JavaScript</span></div>
+        </a>
+        <a class="proj" href="https://github.com/gardusi/advent-of-code-2024" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>advent-of-code-2024</h3><span class="arrow">↗</span></div>
+          <p>My solutions to Advent of Code 2024.</p>
+          <div class="proj-foot"><span><i class="lang-dot" style="background:#3178c6"></i>TypeScript</span></div>
+        </a>
+        <a class="proj" href="https://github.com/gardusi/rust-study" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>rust-study</h3><span class="arrow">↗</span></div>
+          <p>Small programs written while learning Rust.</p>
+          <div class="proj-foot"><span><i class="lang-dot" style="background:#dea584"></i>Rust</span></div>
+        </a>
+      </div>
+      <p class="more reveal">&gt; More on <a href="https://github.com/gardusi" target="_blank" rel="noopener">github.com/gardusi</a></p>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="idx">[05]</div><h2>Education</h2></div>
+        <div class="label">Degree / Languages / Courses</div>
+      </div>
+      <div class="edu-grid reveal">
+        <div>
+          <h3 class="label">Formal education</h3>
+          <div class="edu-item">
+            <div class="when">2014 — 2018</div>
+            <h4>Polytechnic School · University of São Paulo</h4>
+            <p>Degree in Computer Engineering. Member of a mobile development study group.</p>
+          </div>
+          <div class="edu-item">
+            <div class="when">2011 — 2013</div>
+            <h4>Liceu de Artes e Ofícios de São Paulo</h4>
+            <p>Technical education in Electronics.</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="label">Languages</h3>
+          <div class="lang-row"><div class="top"><span>Portuguese</span><small>Native</small></div><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+          <div class="lang-row"><div class="top"><span>English</span><small>Advanced</small></div><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+          <div class="lang-row"><div class="top"><span>Spanish</span><small>Intermediate</small></div><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="lang-row"><div class="top"><span>German</span><small>Basic</small></div><div class="meter"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
+        <div>
+          <h3 class="label">Courses</h3>
+          <ul class="courses">
+            <li><span>AWS Cloud Practitioner<small>In progress</small></span></li>
+            <li><span>Creation and Administration of Software Businesses</span></li>
+            <li><span>Linux Essentials</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="wrap contact">
+      <div class="contact-box reveal">
+        <div class="hazard" aria-hidden="true"></div>
+        <div class="contact-inner">
+          <div>
+            <div class="idx">[06] Contact</div>
+            <h2>Let's build<br>something solid.</h2>
+            <p>Open to conversations about engineering leadership, fintech systems and hard problems worth solving.</p>
+          </div>
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:giovanni.gardusi@gmail.com"><span class="left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="2" y="4" width="20" height="16"/><path d="m22 7-10 6L2 7"/></svg>
+              giovanni.gardusi@gmail.com</span><span>→</span></a>
+            <a class="btn" href="https://www.linkedin.com/in/gardusi" target="_blank" rel="noopener"><span class="left">linkedin.com/in/gardusi</span><span>↗</span></a>
+            <a class="btn" href="https://github.com/gardusi" target="_blank" rel="noopener"><span class="left">github.com/gardusi</span><span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="foot">
+      <span>© <span id="year">2026</span> Giovanni Gardusi</span>
+      <span>Built by hand · No frameworks</span>
+    </div>
+  </footer>
+
+  <script>
+    document.body.classList.remove('no-js');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var root = document.documentElement;
+    document.getElementById('themeBtn').addEventListener('click', function () {
+      var current = root.getAttribute('data-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }
+  </script>
+</body>
+</html>
